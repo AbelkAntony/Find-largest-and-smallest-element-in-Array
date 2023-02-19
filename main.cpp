@@ -1,14 +1,14 @@
 #include <iostream>
 using namespace std;
 
-//function to display array
+//FUNCTION TO DISPLAY ARRAY
 void DisplayArray(int array[],int sizeOfArray)
 {
 	cout<<"\n The array is = ";
 	for(int i=0; i<sizeOfArray; i++)
 		cout<<" "<<array[i];
 }
-//FUNCTION TO FIND LARGEST NUMBER
+//FUNCTION TO FIND LARGEST AND SECOND LARGEST NUMBER
 void LargestNumber(int array[],int sizeOfArray,int choice)
 {
 	int highestNumber = 0;
@@ -21,13 +21,15 @@ void LargestNumber(int array[],int sizeOfArray,int choice)
 			highestNumber = array[i];
 		}
 	}
+	//DISPLAY LARGEST NUMBER
 	if(choice == 1)
 		cout<<"\nTHE HIGHEST NUMBER IN THE ARRAY IS "<<highestNumber;
+	//DISPLAY SECOND LARGEST NUMBER	
 	else if(choice == 3)
 		cout<<"\nTHE SECOND HIGHEST NUMBER IN THE ARRAY IS "<<secondHighestNumber;
 }
 
-//FUNCTION TO FIND SMALLEST NUMBER
+//FUNCTION TO FIND SMALLEST AND SECOND SMALLEST NUMBER
 void SmallestNumber(int array[],int sizeOfArray, int choice)
 {
 	int smallestNumber = array[0];
@@ -40,8 +42,10 @@ void SmallestNumber(int array[],int sizeOfArray, int choice)
 			smallestNumber = array[i];
 		}
 	}
+	//DISPLAY SMALLEST NUMBER 
 	if(choice == 2)
 		cout<<"\nTHE SMALLEST NUMBER IN THE ARRAY IS "<<smallestNumber;
+	//DISPLAY SECOND SMALLEST NUMBER	
 	else if(choice == 4)
 		cout<<"\nTHE SECOND SMALLEST NUMBER IN THE ARRAY IS "<<secondSmallestNumber;
 }
@@ -49,13 +53,13 @@ void SmallestNumber(int array[],int sizeOfArray, int choice)
 int main() 
 {
 	srand(time(0));
-	//variables
+	//VARIABLES
 	int sizeOfArray;
 	int choice;
-	//user input to set the length of the array
+	//USER INPUT TO SET THE LENGTH OF THE ARRAY
 	cout <<"Enter the number of items : ";
 	cin>>sizeOfArray;
-	//creating arry with the length inputed by the user
+	//CREATING ARRAY WITH THE LENGTH UNPUTED BY THE USER
 	int array[sizeOfArray];
 	//inputing array element by random numbers
 	for(int i=0 ; i<sizeOfArray ; i++)
@@ -63,8 +67,9 @@ int main()
 		//cout << (rand() % (ub - lb + 1)) + lb << " ";
 		array[i]=(rand()%(9-1+1))+1;
 	}
-	//displaying randomly generated array
+	//DISPLAYING RANDOMLY GENERATED ARRAY
 	DisplayArray(array,sizeOfArray);
+	//option 
 	cout<<"\n\nOPTIONS";
 	cout<<"\n1. FIND THE LARGEST NUMBER";
 	cout<<"\n2. FIND THE SMALLEST NUMBER";
@@ -72,8 +77,10 @@ int main()
 	cout<<"\n4. FIND THE SECOND SMALLEST NUMBER";
 	cout<<"\nENTER YOUR CHOICE : ";
 	cin>>choice;
+	//FUNCTION CALL TO FIND LARGEST AND SECOND LARGEST NUMBER IN THE ARRAY
 	if(choice == 1 || choice == 3)
 		LargestNumber(array,sizeOfArray,choice);
+	//FUNCTION CALL TO FIND SMALLEST AND SECOND SMALLEST NUMBER IN THE ARRAY		
 	else if(choice == 2 || choice == 4)
 		SmallestNumber(array,sizeOfArray,choice);
 	else
