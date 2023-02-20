@@ -37,13 +37,19 @@ void LargestNumber(int array[],int sizeOfArray)
 void SmallestNumber(int array[],int sizeOfArray)
 {
 	int smallestNumber = array[0];
-	int secondSmallestNumber = 0;
+	int secondSmallestNumber =array[0];
 	for(int i=0; i<sizeOfArray; i++)
 	{
 		if(smallestNumber>array[i])
 		{
-			secondSmallestNumber = smallestNumber;
 			smallestNumber = array[i];
+		}
+	}
+	for(int i=0; i<sizeOfArray; i++)
+	{
+		if(array[i]!=smallestNumber && secondSmallestNumber>array[i])
+		{
+			secondSmallestNumber = array[i];
 		}
 	}
 	//DISPLAY SMALLEST NUMBER 
