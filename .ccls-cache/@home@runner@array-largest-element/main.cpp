@@ -58,6 +58,22 @@ void SmallestNumber(int array[],int sizeOfArray)
 	cout<<"\nTHE SECOND SMALLEST NUMBER IN THE ARRAY IS "<<secondSmallestNumber;
 }
 
+void ReverseArray(int array[],int sizeOfArray)
+{
+	int temp;
+	int reversedArray[sizeOfArray];
+	cout<<"\nARRAY BEFORE REVERSING";
+	DisplayArray(array,sizeOfArray);
+	//REVERSING ARRAY
+	for(int i=0;i<sizeOfArray;i++)
+	{
+		reversedArray[sizeOfArray-1-i]=array[i];	
+	}
+		
+	cout<<"\nARRAY AFTER REVERSING";
+	DisplayArray(reversedArray,sizeOfArray);
+}
+
 int main() 
 {
 	srand(time(0));
@@ -81,5 +97,7 @@ int main()
 	LargestNumber(array,sizeOfArray);
 	//FUNCTION CALL TO FIND SMALLEST AND SECOND SMALLEST NUMBER IN THE ARRAY		
 	SmallestNumber(array,sizeOfArray);
+	//FUNCTION CALL TO REVERSE THE ARRAY
+	ReverseArray(array,sizeOfArray);
 
 }
