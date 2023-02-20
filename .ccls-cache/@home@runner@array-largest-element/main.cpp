@@ -28,9 +28,9 @@ void LargestNumber(int array[],int sizeOfArray)
 		}
 	}
 	//DISPLAY LARGEST NUMBER
-	cout<<"\nTHE HIGHEST NUMBER IN THE ARRAY IS "<<highestNumber;
+	cout<<"\n\nTHE HIGHEST NUMBER IN THE ARRAY IS "<<highestNumber;
 	//DISPLAY SECOND LARGEST NUMBER	
-	cout<<"\nTHE SECOND HIGHEST NUMBER IN THE ARRAY IS "<<secondHighestNumber;
+	cout<<"\n\nTHE SECOND HIGHEST NUMBER IN THE ARRAY IS "<<secondHighestNumber;
 }
 
 //FUNCTION TO FIND SMALLEST AND SECOND SMALLEST NUMBER
@@ -53,16 +53,16 @@ void SmallestNumber(int array[],int sizeOfArray)
 		}
 	}
 	//DISPLAY SMALLEST NUMBER 
-	cout<<"\nTHE SMALLEST NUMBER IN THE ARRAY IS "<<smallestNumber;
+	cout<<"\n\nTHE SMALLEST NUMBER IN THE ARRAY IS "<<smallestNumber;
 	//DISPLAY SECOND SMALLEST NUMBER	
-	cout<<"\nTHE SECOND SMALLEST NUMBER IN THE ARRAY IS "<<secondSmallestNumber;
+	cout<<"\n\nTHE SECOND SMALLEST NUMBER IN THE ARRAY IS "<<secondSmallestNumber;
 }
 
 void ReverseArray(int array[],int sizeOfArray)
 {
 	int temp;
 	int reversedArray[sizeOfArray];
-	cout<<"\nARRAY BEFORE REVERSING";
+	cout<<"\n\nARRAY BEFORE REVERSING";
 	DisplayArray(array,sizeOfArray);
 	//REVERSING ARRAY
 	for(int i=0;i<sizeOfArray;i++)
@@ -70,10 +70,48 @@ void ReverseArray(int array[],int sizeOfArray)
 		reversedArray[sizeOfArray-1-i]=array[i];	
 	}
 		
-	cout<<"\nARRAY AFTER REVERSING";
+	cout<<"\n\nARRAY AFTER REVERSING";
 	DisplayArray(reversedArray,sizeOfArray);
 }
+//FUNCTION TO SORT ARRAY IN ASCENDING ORDER
+void SortArrayAscendingOrder(int array[],int sizeOfArray)
+{
+	int temp;
+	for(int i=0;i<sizeOfArray; i++)
+	{
+		for(int j =i+1;j<sizeOfArray;j++)
+		{
+			if(array[i]>array[j])
+			{
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+	cout<<"\n\nSORTED IN ASCENDING ORDER";
+	DisplayArray(array,sizeOfArray);
+}
 
+//FUNCTION TO SORT ARRAY IN DESCENDING OREDER
+void SortArrayDescendingOrder(int array[],int sizeOfArray)
+{
+	int temp;
+	for(int i=0;i<sizeOfArray; i++)
+	{
+		for(int j =i+1;j<sizeOfArray;j++)
+		{
+			if(array[i]<array[j])
+			{
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+		}
+	}
+	cout<<"\n\nSORTED IN DESCENDING ORDER";
+	DisplayArray(array,sizeOfArray);
+}
 int main() 
 {
 	srand(time(0));
@@ -99,5 +137,8 @@ int main()
 	SmallestNumber(array,sizeOfArray);
 	//FUNCTION CALL TO REVERSE THE ARRAY
 	ReverseArray(array,sizeOfArray);
-
+	//FUNCTION CALL TO SORT ARRAY IN ASCENDING ORDER
+	SortArrayAscendingOrder(array,sizeOfArray);
+	//FUNCTION CALL TO SORT ARRAY IN DESCENDING ORDER
+	SortArrayDescendingOrder(array,sizeOfArray);
 }
