@@ -60,7 +60,6 @@ void SmallestNumber(int array[],int sizeOfArray)
 
 void ReverseArray(int array[],int sizeOfArray)
 {
-	int temp;
 	int reversedArray[sizeOfArray];
 	cout<<"\n\nARRAY BEFORE REVERSING";
 	DisplayArray(array,sizeOfArray);
